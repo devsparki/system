@@ -1,23 +1,28 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   }
 
 body {
-background-color: #000000;
+background-color: #0a0a0a;
 color: white;
 font-family: Arial, sans-serif;
 }
 
+/* Menu */
+
 nav {
-background-color: #000000;
+background-color: #151515;
 padding: 18px 30px;
 
 display: flex;
 justify-content: center;
 align-items: center;
 
-border-bottom: 1px solid #000000;
+border-bottom: 1px solid #333;
+
+min-height: 70px;
 
 }
 
@@ -45,7 +50,12 @@ background-color: #ff3333;
 transform: scale(1.05);
 }
 
-/* Menu */
+/* Menu central */
+
+.menu {
+display: flex;
+align-items: center;
+}
 
 .menu a {
 color: #cccccc;
@@ -102,6 +112,10 @@ width: 100%;
 .login {
 position: absolute;
 right: 30px;
+
+display: flex;
+align-items: center;
+
 }
 
 .login a {
@@ -132,4 +146,64 @@ border-radius: 5px;
 .login .entrar:hover {
 background-color: #ff3333;
 transform: scale(1.05);
+}
+
+/* ========================= */
+/* CELULAR */
+/* ========================= */
+
+@media (max-width: 700px) {
+
+nav {
+    padding: 15px;
+    min-height: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Logo */
+
+.logo {
+    position: static;
+
+    padding: 8px 12px;
+    font-size: 17px;
+}
+
+/* Menu */
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.menu a {
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+/* Login */
+
+.login {
+    position: static;
+
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.login a {
+    margin-left: 0;
+    font-size: 14px;
+}
+
+.login .entrar {
+    padding: 8px 13px;
+}
+
 }
