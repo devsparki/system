@@ -1,40 +1,218 @@
+
+
 <!DOCTYPE html>
-
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System GFG</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System GFG</title>
 
-<link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<nav>
+  <header class="navbar">
 
-    <div class="logo">
-        GFG
+    <!-- Logo -->
+    <a href="#" class="logo" aria-label="VerdeTech - início">
+      <span class="logo-icon" aria-hidden="true"></span>
+
+      System<span>GFG</span>
+    </a>
+
+    <!-- Navegação desktop -->
+    <nav class="nav-links" aria-label="Navegação principal">
+
+      <a href="#" class="nav-link active" aria-current="page">
+        Início
+      </a>
+
+      <a href="#" class="nav-link">
+        Modalidades
+      </a>
+
+      <a href="#" class="nav-link">
+        Sobre
+      </a>
+
+      <a href="#" class="nav-link">
+        Contato
+      </a>
+
+    </nav>
+
+    <!-- Ações -->
+    <div class="nav-actions">
+
+      <!-- Pesquisa -->
+      <button class="search-btn" aria-label="Pesquisar">
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-4-4"></path>
+        </svg>
+
+      </button>
+
+      <!-- CTA -->
+      <a href="#" class="cta">
+
+        Comece agora
+
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 12h14"></path>
+          <path d="m13 6 6 6-6 6"></path>
+        </svg>
+
+      </a>
+
+      <!-- Hamburger -->
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+
+        <span class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+
+      </button>
+
     </div>
 
-    <div class="menu">
-        <a href="#" class="ativo">Início</a>
-        <a href="#">Modalidades</a>
-        <a href="#">Sobre</a>
-        <a href="#">Contato</a>
-    </div>
+  </header>
 
-    <div class="login">
-        <a href="#">Cadastrar</a>
-        <a href="#" class="entrar">Entrar</a>
-    </div>
 
-</nav>
+  <!-- Menu mobile -->
+  <nav
+    class="mobile-menu"
+    id="mobileMenu"
+    aria-label="Navegação mobile"
+  >
 
-<script src="script.js"></script>
+    <a href="#" class="mobile-link active">
+      Início
+    </a>
+
+    <a href="#" class="mobile-link">
+      Modalidades
+    </a>
+
+    <a href="#" class="mobile-link">
+      Sobre
+    </a>
+
+    <a href="#" class="mobile-link">
+      Contato
+    </a>
+
+    <div class="mobile-divider"></div>
+
+    <a href="#" class="cta mobile-cta">
+
+      Comece agora
+
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M5 12h14"></path>
+        <path d="m13 6 6 6-6 6"></path>
+      </svg>
+
+    </a>
+
+  </nav>
+
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+
+      const isOpen = menuBtn.classList.toggle("open");
+
+      mobileMenu.classList.toggle("open", isOpen);
+
+      menuBtn.setAttribute("aria-expanded", isOpen);
+
+      menuBtn.setAttribute(
+        "aria-label",
+        isOpen ? "Fechar menu" : "Abrir menu"
+      );
+
+    });
+
+
+    // Fecha o menu ao clicar em um link
+    document.querySelectorAll(".mobile-link").forEach((link) => {
+
+      link.addEventListener("click", () => {
+
+        menuBtn.classList.remove("open");
+
+        mobileMenu.classList.remove("open");
+
+        menuBtn.setAttribute("aria-expanded", "false");
+
+        menuBtn.setAttribute(
+          "aria-label",
+          "Abrir menu"
+        );
+
+      });
+
+    });
+
+
+    // Fecha com ESC
+    document.addEventListener("keydown", (event) => {
+
+      if (event.key === "Escape") {
+
+        menuBtn.classList.remove("open");
+
+        mobileMenu.classList.remove("open");
+
+        menuBtn.setAttribute("aria-expanded", "false");
+
+        menuBtn.setAttribute(
+          "aria-label",
+          "Abrir menu"
+        );
+
+      }
+
+    });
+  </script>
+
+  <script src="script.js"></script>
 
 </body>
-
 </html>
+

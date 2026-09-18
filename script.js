@@ -20,24 +20,29 @@ const init = () => {
         left: "50%",
         transform: "translate(-50%, -50%)",
 
-        backgroundColor: "#151515",
-        color: "#ffffff",
+        background: "linear-gradient(145deg, rgba(40, 4, 4, 0.98), rgba(18, 2, 2, 0.98))",
+        color: "#fff4f4",
 
-        padding: "30px 45px",
-        borderRadius: "12px",
+        width: "min(90vw, 620px)",
+        padding: "28px 34px",
+        borderRadius: "20px",
 
-        border: "1px solid #333",
-        borderTop: "4px solid #e32626",
+        border: "1px solid rgba(255, 90, 90, 0.45)",
+        borderTop: "4px solid #ff5a5a",
 
-        fontSize: "28px",
-        fontWeight: "bold",
+        fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif",
+        fontSize: "clamp(1.1rem, 3vw, 1.7rem)",
+        fontWeight: "750",
+        lineHeight: "1.4",
+        letterSpacing: "0.02em",
         textAlign: "center",
 
-        boxShadow: "0 8px 25px rgba(0, 0, 0, 0.6)",
+        boxShadow: "0 18px 55px rgba(255, 42, 42, 0.18), 0 0 35px rgba(255, 90, 90, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.12)",
+        backdropFilter: "blur(12px)",
 
         zIndex: "1000",
 
-        transition: "0.3s"
+        transition: "transform 0.3s ease, box-shadow 0.3s ease"
     });
 
     /* Mensagem */
@@ -48,20 +53,24 @@ const init = () => {
         left: "50%",
         transform: "translate(-50%, -50%)",
 
-        backgroundColor: "#151515",
-        color: "#ffffff",
+        background: "linear-gradient(145deg, rgba(44, 4, 4, 0.98), rgba(18, 2, 2, 0.98))",
+        color: "#fff4f4",
 
-        padding: "35px 50px",
-        borderRadius: "12px",
+        width: "min(90vw, 620px)",
+        padding: "32px 38px",
+        borderRadius: "20px",
 
-        border: "1px solid #333",
-        borderTop: "4px solid #e32626",
+        border: "1px solid rgba(255, 90, 90, 0.5)",
+        borderTop: "4px solid #ff5a5a",
 
-        fontSize: "25px",
-        fontWeight: "bold",
+        fontFamily: "Inter, ui-sans-serif, system-ui, sans-serif",
+        fontSize: "clamp(1.1rem, 3vw, 1.55rem)",
+        fontWeight: "750",
+        lineHeight: "1.4",
         textAlign: "center",
 
-        boxShadow: "0 10px 35px rgba(0, 0, 0, 0.7)",
+        boxShadow: "0 18px 55px rgba(255, 42, 42, 0.18), 0 0 35px rgba(255, 90, 90, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.18)",
+        backdropFilter: "blur(12px)",
 
         zIndex: "1001",
 
@@ -71,33 +80,25 @@ const init = () => {
     document.body.append(countdown, message);
 
 
-    /* Próximo sábado */
+    /* Próximo horário de 20:00 */
 
-    function nextSaturdayMidnight() {
+    function nextTwentyPM() {
 
         const now = new Date();
         const next = new Date(now);
 
-        const daysUntilSaturday =
-            (6 - now.getDay() + 7) % 7;
-
-        next.setDate(
-            now.getDate() + daysUntilSaturday
-        );
-
-        next.setHours(0, 0, 0, 0);
+        next.setHours(20, 0, 0, 0);
 
         if (next <= now) {
-            next.setDate(
-                next.getDate() + 7
-            );
+            next.setDate(next.getDate() + 1);
+            next.setHours(20, 0, 0, 0);
         }
 
         return next;
     }
 
 
-    let target = nextSaturdayMidnight();
+    let target = nextTwentyPM();
     let messageTimer;
 
 
@@ -119,7 +120,7 @@ const init = () => {
 
                 message.style.display = "none";
 
-                target = nextSaturdayMidnight();
+                target = nextTwentyPM();
 
                 updateCountdown();
 
