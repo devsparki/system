@@ -245,7 +245,7 @@ body::before {
   justify-content: center;
   gap: 12px;
   padding: 0 22px;
-  color: #200101;
+  color: #000000;
   background: linear-gradient(135deg, var(--red-400), var(--red-500));
   border: none;
   border-radius: 999px;
