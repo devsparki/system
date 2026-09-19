@@ -143,11 +143,13 @@ body::before {
 ======================================== */
 
 .nav-links {
+  position: absolute;
+  left: 50%;
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-left: auto;
-  margin-right: 42px;
+  margin: 0;
+  transform: translateX(-50%);
 }
 
 .nav-link {
@@ -202,34 +204,6 @@ body::before {
   display: flex;
   align-items: center;
   gap: 12px;
-}
-
-/* ========================================
-   SEARCH
-======================================== */
-
-.search-btn {
-  width: 46px;
-  height: 46px;
-  display: grid;
-  place-items: center;
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.025);
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  cursor: pointer;
-  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
-}
-
-.search-btn:hover {
-  background: rgba(255, 90, 90, 0.14);
-  border-color: rgba(255, 90, 90, 0.38);
-  transform: translateY(-2px);
-}
-
-.search-btn svg {
-  width: 19px;
-  height: 19px;
 }
 
 /* ========================================
@@ -677,7 +651,7 @@ body::before {
 @media (max-width: 1050px) {
   .nav-links {
     gap: 0;
-    margin-right: 20px;
+    margin: 0;
   }
 
   .nav-link {
@@ -685,9 +659,6 @@ body::before {
     font-size: 14px;
   }
 
-  .search-btn {
-    display: none;
-  }
 }
 
 /* ========================================
@@ -832,7 +803,6 @@ body::before {
 .nav-link:focus-visible,
 .logo:focus-visible,
 .cta:focus-visible,
-.search-btn:focus-visible,
 .menu-btn:focus-visible,
 .mobile-link:focus-visible {
   outline: 2px solid var(--red-400);
