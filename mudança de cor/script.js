@@ -1,37 +1,5 @@
 (() => {
 
-const setupThemeSwitcher = () => {
-    const root = document.documentElement;
-    const themeButtons = document.querySelectorAll(".theme-option");
-    const redThemeStylesheet = document.getElementById("redThemeStylesheet");
-    const savedTheme = localStorage.getItem("gfg-theme") || "gray";
-
-    const applyTheme = (theme) => {
-        root.setAttribute("data-theme", theme);
-        redThemeStylesheet.disabled = theme !== "red";
-
-        document.querySelectorAll("img[data-gray-src][data-red-src]").forEach((image) => {
-            image.src = theme === "red" ? image.dataset.redSrc : image.dataset.graySrc;
-        });
-
-        themeButtons.forEach((button) => {
-            const isActive = button.dataset.themeOption === theme;
-            button.classList.toggle("is-active", isActive);
-            button.setAttribute("aria-pressed", String(isActive));
-        });
-    };
-
-    themeButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-            const selectedTheme = button.dataset.themeOption;
-            localStorage.setItem("gfg-theme", selectedTheme);
-            applyTheme(selectedTheme);
-        });
-    });
-
-    applyTheme(savedTheme);
-};
-
 // Configura a abertura da tela de autenticação e a troca entre seus modos visuais.
 const setupAuthentication = () => {
     const authScreen = document.getElementById("authScreen");
@@ -278,7 +246,6 @@ if (document.readyState === "loading") {
     document.addEventListener(
         "DOMContentLoaded",
         () => {
-            setupThemeSwitcher();
             setupAuthentication();
             init();
         },
@@ -287,7 +254,6 @@ if (document.readyState === "loading") {
 
 } else {
 
-    setupThemeSwitcher();
     setupAuthentication();
     init();
 
