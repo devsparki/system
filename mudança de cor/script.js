@@ -138,11 +138,11 @@ const init = () => {
     /* Calcula a próxima atualização semanal para quarta-feira às 20:00 */
 
     function nextWednesdayAtEight(now = new Date()) {
-
         const next = new Date(now);
-        const daysUntilWednesday = (3 - now.getDay() + 7) % 7;
+        const currentDay = next.getDay();
+        const daysUntilWednesday = (3 - currentDay + 7) % 7;
 
-        next.setDate(now.getDate() + daysUntilWednesday);
+        next.setDate(next.getDate() + daysUntilWednesday);
         next.setHours(20, 0, 0, 0);
 
         if (next <= now) {
@@ -152,7 +152,7 @@ const init = () => {
         return next;
     }
 
-    // Define o ciclo inicial de hoje às 20:00 e os próximos ciclos de quarta-feira.
+    // Define o alvo inicial como hoje às 20:00 quando ainda não passou, ou a próxima quarta às 20:00.
     function initialUpdateTarget() {
         const now = new Date();
         const todayAtEight = new Date(now);
