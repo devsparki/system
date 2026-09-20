@@ -147,23 +147,15 @@ const init = () => {
 
         if (next <= now) {
             next.setDate(next.getDate() + 7);
+            next.setHours(20, 0, 0, 0);
         }
 
         return next;
     }
 
-    // Define o alvo inicial como hoje às 20:00 quando ainda não passou, ou a próxima quarta às 20:00.
+    // Sempre usa a próxima quarta-feira às 20:00 como prazo do contador.
     function initialUpdateTarget() {
-        const now = new Date();
-        const todayAtEight = new Date(now);
-        todayAtEight.setHours(20, 0, 0, 0);
-        const messageEndsAt = todayAtEight.getTime() + 60 * 60 * 1000;
-
-        if (now < todayAtEight || now.getTime() < messageEndsAt) {
-            return todayAtEight;
-        }
-
-        return nextWednesdayAtEight(now);
+        return nextWednesdayAtEight(new Date());
     }
 
 
