@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GFG | Contato</title>
+  <meta name="description" content="Contato do Sistema GFG. Em breve.">
+  <meta name="theme-color" content="#111111">
+  <link rel="icon" type="image/png" href="imagens/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link id="redThemeStylesheet" rel="stylesheet" href="mudan%C3%A7a%20de%20cor/style.css" disabled>
+</head>
+<body class="utility-page">
+  <header class="navbar">
+    <a href="index.html" class="logo" aria-label="Voltar para o início">
+      <span class="logo-icon" aria-hidden="true"></span>
+      System<span>GFG</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="index.html" class="nav-link">Início</a>
+      <a href="modalidades.html" class="nav-link">Modalidades</a>
+      <a href="sobre.html" class="nav-link">Sobre</a>
+      <a href="contato.html" class="nav-link active" aria-current="page">Contato</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="theme-switcher" aria-label="Escolha de cor">
+        <button class="theme-option theme-option-red" type="button" data-theme-option="red" aria-label="Usar tema vermelho" aria-pressed="false">
+          <span aria-hidden="true"></span>
+          Vermelho
+        </button>
+        <button class="theme-option theme-option-gray" type="button" data-theme-option="gray" aria-label="Usar tema cinza" aria-pressed="false">
+          <span aria-hidden="true"></span>
+          Cinza
+        </button>
+      </div>
+
+      <a href="#" class="cta auth-trigger">
+        Comece agora
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14"></path>
+          <path d="m13 6 6 6-6 6"></path>
+        </svg>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Navegação mobile">
+    <a href="index.html" class="mobile-link">Início</a>
+    <a href="modalidades.html" class="mobile-link">Modalidades</a>
+    <a href="sobre.html" class="mobile-link">Sobre</a>
+    <a href="contato.html" class="mobile-link active">Contato</a>
+    <div class="mobile-divider"></div>
+    <a href="#" class="cta mobile-cta auth-trigger">
+      Comece agora
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14"></path>
+        <path d="m13 6 6 6-6 6"></path>
+      </svg>
+    </a>
+  </nav>
+
+  <main class="utility-card">
+    <p class="eyebrow">Atendimento</p>
+    <h1>Em breve</h1>
+    <p>Os canais de contato da nossa equipe estarão disponíveis em breve. Acompanhe o site para novidades e informações de agendamento.</p>
+  </main>
+
+  <main class="auth-screen" id="authScreen" aria-hidden="true">
+    <section class="auth-card" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="auth-close" id="authClose" type="button" aria-label="Fechar autenticação">&times;</button>
+      <div class="auth-avatar" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="31" fill="rgba(255,255,255,.16)"/>
+          <path d="M32 14c-8 0-13 6-13 14 0 5 2 8 4 11-1 5-5 7-11 9 6 7 13 10 20 10s14-3 20-10c-6-2-10-4-11-9 2-3 4-6 4-11 0-8-5-14-13-14Z" fill="#eee8f2"/>
+        </svg>
+      </div>
+      <div class="auth-heading">
+        <p class="auth-kicker">System GFG</p>
+        <h1 id="authTitle">Bem-vindo de volta</h1>
+        <p id="authSubtitle">Acesse sua conta para continuar</p>
+      </div>
+      <div class="auth-tabs" role="tablist" aria-label="Tipo de acesso">
+        <button class="auth-tab is-active" id="loginTab" type="button" role="tab" aria-selected="true">Entrar</button>
+        <button class="auth-tab" id="registerTab" type="button" role="tab" aria-selected="false">Criar conta</button>
+      </div>
+      <div class="auth-form">
+        <label class="auth-field">
+          <span>E-mail</span>
+          <span class="field-control">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>
+            <input type="email" placeholder="seuemail@exemplo.com" aria-label="E-mail">
+          </span>
+        </label>
+        <label class="auth-field name-field" id="nameField" hidden>
+          <span>Nome completo</span>
+          <span class="field-control">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20c.8-4 3-6 7-6s6.2 2 7 6"/></svg>
+            <input type="text" placeholder="Seu nome" aria-label="Nome completo">
+          </span>
+        </label>
+        <label class="auth-field">
+          <span>Senha</span>
+          <span class="field-control">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            <input id="authPassword" type="password" placeholder="Digite sua senha" aria-label="Senha">
+            <button class="password-toggle" id="passwordToggle" type="button">Mostrar</button>
+          </span>
+        </label>
+        <div class="auth-options" id="loginOptions">
+          <label class="remember"><input type="checkbox"> <span>Lembrar de mim</span></label>
+          <button type="button" class="forgot-password">Esqueci minha senha</button>
+        </div>
+        <button class="auth-submit" type="button">ENTRAR</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

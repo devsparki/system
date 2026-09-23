@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GFG | Modalidades</title>
+  <meta name="description" content="Conheça as modalidades do Sistema GFG e escolha o treino ideal para sua evolução.">
+  <meta name="theme-color" content="#111111">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Sistema GFG">
+  <meta property="og:title" content="GFG | Modalidades">
+  <meta property="og:description" content="Disciplina, foco e evolução em cada modalidade do Sistema GFG.">
+  <meta property="og:image" content="imagens/gfg.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GFG | Modalidades">
+  <meta name="twitter:description" content="Treinos pensados para cada objetivo e nível.">
+  <link rel="icon" type="image/png" href="imagens/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link id="redThemeStylesheet" rel="stylesheet" href="mudan%C3%A7a%20de%20cor/style.css" disabled>
+</head>
+
+<body class="modalidades-page-body">
+  <header class="navbar">
+    <a href="index.html" class="logo" aria-label="Voltar para o início">
+      <span class="logo-icon" aria-hidden="true"></span>
+      System<span>GFG</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="index.html" class="nav-link">Início</a>
+      <a href="modalidades.html" class="nav-link active" aria-current="page">Modalidades</a>
+      <a href="sobre.html" class="nav-link">Sobre</a>
+      <a href="contato.html" class="nav-link">Contato</a>
+    </nav>
+
+    <div class="nav-actions">
+      <div class="theme-switcher" aria-label="Escolha de cor">
+        <button class="theme-option theme-option-red" type="button" data-theme-option="red" aria-label="Usar tema vermelho" aria-pressed="false">
+          <span aria-hidden="true"></span>
+          Vermelho
+        </button>
+        <button class="theme-option theme-option-gray" type="button" data-theme-option="gray" aria-label="Usar tema cinza" aria-pressed="false">
+          <span aria-hidden="true"></span>
+          Cinza
+        </button>
+      </div>
+
+      <a href="#" class="cta auth-trigger">
+        Comece agora
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14"></path>
+          <path d="m13 6 6 6-6 6"></path>
+        </svg>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="menu-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Navegação mobile">
+    <a href="index.html" class="mobile-link">Início</a>
+    <a href="modalidades.html" class="mobile-link active">Modalidades</a>
+    <a href="sobre.html" class="mobile-link">Sobre</a>
+    <a href="contato.html" class="mobile-link">Contato</a>
+
+    <div class="mobile-divider"></div>
+
+    <a href="#" class="cta mobile-cta auth-trigger">
+      Comece agora
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14"></path>
+        <path d="m13 6 6 6-6 6"></path>
+      </svg>
+    </a>
+  </nav>
+
+  <div class="modalidades-shell">
+    <div class="modalidades-topbar" aria-label="Navegação de modalidades">
+      <a href="#jiu-jitsu">JIU-JITSU</a>
+      <a href="#boxe">BOXE</a>
+      <a href="#muay-thai">MUAY THAI</a>
+      <a href="#todos-niveis">TODOS OS NÍVEIS</a>
+    </div>
+
+    <main class="modalidades-main">
+      <section class="modalidades-intro">
+        <div class="intro-title-wrap">
+          <p class="mini-label">ESCOLHA O SEU CAMINHO</p>
+          <h1>TRÊS MODALIDADES.<br>INFINITAS CONQUISTAS.</h1>
+        </div>
+        <p class="intro-copy">
+          Turmas estruturadas por experiência, acompanhamento próximo e metodologia que respeita o seu ritmo.
+        </p>
+      </section>
+
+      <section class="modalidades-cards" aria-label="Categorias das modalidades">
+        <article class="modality-mini-card">
+          <div class="mini-card-number">01</div>
+          <button class="mini-card-close" type="button" aria-label="Fechar Jiu-Jitsu">×</button>
+          <h3>JIU-JITSU</h3>
+          <p>Controle, estratégia e técnica no tatame.</p>
+        </article>
+
+        <article class="modality-mini-card">
+          <div class="mini-card-number">02</div>
+          <button class="mini-card-close" type="button" aria-label="Fechar Boxe">×</button>
+          <h3>BOXE</h3>
+          <p>Precisão, velocidade e condição para o combate.</p>
+        </article>
+
+        <article class="modality-mini-card">
+          <div class="mini-card-number">03</div>
+          <button class="mini-card-close" type="button" aria-label="Fechar Muay Thai">×</button>
+          <h3>MUAY THAI</h3>
+          <p>Potência e domínio dos golpes do corpo.</p>
+        </article>
+      </section>
+
+      <section class="showcase-panel" id="jiu-jitsu">
+        <div class="showcase-image">
+          <img src="imagens/Jiu-Jitsu.jpg" data-gray-src="imagens/Jiu-Jitsu.jpg" data-red-src="mudan%C3%A7a%20de%20cor/imagens/Jiu-Jitsu.jpg" alt="Treino de Jiu-Jitsu">
+        </div>
+
+        <div class="showcase-info dark-panel">
+          <p class="tag">MODALIDADE 01</p>
+          <h2>JIU-JITSU</h2>
+          <p class="description">
+            Arte suave que desenvolve controle, raciocínio sob pressão e confiança. Aprenda quedas, posições e finalizações com segurança.
+          </p>
+
+          <div class="info-tags">
+            <span>FORÇA FUNCIONAL</span>
+            <span>MOBILIDADE</span>
+            <span>AUTOCONFIANÇA</span>
+          </div>
+
+          <div class="level-row">
+            <span>NÍVEL</span>
+            <strong>Iniciantes, intermediários e competidores</strong>
+          </div>
+
+          <div class="schedule-block">
+            <h3>QUADRO DE HORÁRIOS</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>DIAS</th>
+                  <th>HORÁRIO</th>
+                  <th>TURMA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Seg - Qua - Sex</td>
+                  <td>06:30</td>
+                  <td>Fundamentos</td>
+                </tr>
+                <tr>
+                  <td>Seg - Qua</td>
+                  <td>19:00</td>
+                  <td>Iniciante</td>
+                </tr>
+                <tr>
+                  <td>Ter - Qui</td>
+                  <td>20:15</td>
+                  <td>Intermediário</td>
+                </tr>
+                <tr>
+                  <td>Sábado</td>
+                  <td>10:00</td>
+                  <td>Treino aberto</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <button class="primary-button" type="button">AGENDAR AULA NESTA MODALIDADE</button>
+        </div>
+      </section>
+
+      <section class="showcase-panel boxe-panel" id="boxe">
+        <div class="showcase-image">
+          <img src="imagens/Boxe.jpg" data-gray-src="imagens/Boxe.jpg" data-red-src="mudan%C3%A7a%20de%20cor/imagens/Boxe.jpg" alt="Treino de Boxe">
+        </div>
+
+        <div class="showcase-info dark-panel">
+          <p class="tag">MODALIDADE 02</p>
+          <h2>BOXE</h2>
+          <p class="description">
+            Técnica de mãos, defesa e movimentação em um treino dinâmico. Evolua sua coordenação, foco e resistência.
+          </p>
+
+          <div class="info-tags">
+            <span>CARDIO INTENSO</span>
+            <span>COORDENAÇÃO</span>
+            <span>VELOCIDADE</span>
+          </div>
+
+          <div class="level-row">
+            <span>NÍVEL</span>
+            <strong>Do zero ao avançado, com turma conforme alvos</strong>
+          </div>
+
+          <div class="schedule-block">
+            <h3>QUADRO DE HORÁRIOS</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>DIAS</th>
+                  <th>HORÁRIO</th>
+                  <th>TURMA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Ter - Qui</td>
+                  <td>17:00</td>
+                  <td>Boxe técnico</td>
+                </tr>
+                <tr>
+                  <td>Seg - Qua - Sex</td>
+                  <td>18:30</td>
+                  <td>Iniciante</td>
+                </tr>
+                <tr>
+                  <td>Seg - Qua - Sex</td>
+                  <td>19:30</td>
+                  <td>Todos os níveis</td>
+                </tr>
+                <tr>
+                  <td>Sábado</td>
+                  <td>09:00</td>
+                  <td>Treino funcional</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <button class="primary-button" type="button">AGENDAR AULA NESTA MODALIDADE</button>
+        </div>
+      </section>
+
+      <section class="showcase-panel muay-panel" id="muay-thai">
+        <div class="showcase-image">
+          <img src="imagens/Muay Thai.jpg" data-gray-src="imagens/Muay Thai.jpg" data-red-src="mudan%C3%A7a%20de%20cor/imagens/Muay%20Thai.jpg" alt="Treino de Muay Thai">
+        </div>
+
+        <div class="showcase-info red-panel">
+          <p class="tag">MODALIDADE 03</p>
+          <h2>MUAY THAI</h2>
+          <p class="description">
+            A arte dos golpes combina potência, resistência e disciplina. Treinos intensos para quem busca evolução real.
+          </p>
+
+          <div class="info-tags">
+            <span>CONDICIONAMENTO</span>
+            <span>POTÊNCIA</span>
+            <span>DISCIPLINA</span>
+          </div>
+
+          <div class="level-row">
+            <span>NÍVEL</span>
+            <strong>Iniciantes e atletas em desenvolvimento</strong>
+          </div>
+
+          <div class="schedule-block">
+            <h3>QUADRO DE HORÁRIOS</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>DIAS</th>
+                  <th>HORÁRIO</th>
+                  <th>TURMA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Seg - Qua</td>
+                  <td>07:30</td>
+                  <td>Fundamentos</td>
+                </tr>
+                <tr>
+                  <td>Ter - Qui</td>
+                  <td>18:15</td>
+                  <td>Iniciante</td>
+                </tr>
+                <tr>
+                  <td>Seg - Qua - Sex</td>
+                  <td>20:00</td>
+                  <td>Todos os níveis</td>
+                </tr>
+                <tr>
+                  <td>Sábado</td>
+                  <td>11:00</td>
+                  <td>Treino avançado</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <button class="primary-button" type="button">AGENDAR AULA NESTA MODALIDADE</button>
+        </div>
+      </section>
+
+      <section class="coaches-section" id="todos-niveis">
+        <div class="coaches-header">
+          <p class="mini-label">QUEM ENSINA, VIVE A LUTA</p>
+          <h2>PROFESSORES &amp; TREINADORES</h2>
+          <p>Experiência competitiva, didática e atenção individual em cada treino.</p>
+        </div>
+
+        <div class="coach-grid">
+          <article class="coach-card">
+            <img src="imagens/rafael.jpg" alt="Rafael Costa">
+            <div class="coach-meta">
+              <h3>Rafael Costa</h3>
+              <p>Jiu-Jitsu • Faixa preta • 3º grau</p>
+            </div>
+          </article>
+
+          <article class="coach-card">
+            <img src="imagens/camila.jpg" alt="Camila Rocha">
+            <div class="coach-meta">
+              <h3>Camila Rocha</h3>
+              <p>Boxe • Campeã paulista</p>
+            </div>
+          </article>
+
+          <article class="coach-card">
+            <img src="imagens/niran.jpg" alt="Niran Santos">
+            <div class="coach-meta">
+              <h3>Niran Santos</h3>
+              <p>Muay Thai • Kr certifica</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="experience-panel">
+        <div class="experience-copy">
+          <p class="mini-label">SEU PRIMEIRO TREINO</p>
+          <h2>VENHA SENTIR A ENERGIA DO TATAME.</h2>
+          <p>
+            A aula experimental é gratuita. Escolha a modalidade, venha com roupa confortável e cheque 15 minutos antes do resto.
+          </p>
+          <button type="button" class="primary-button light-button">QUERO MINHA AULA EXPERIMENTAL</button>
+        </div>
+
+        <div class="experience-list">
+          <div class="list-item">
+            <span class="item-number">01</span>
+            <span>Escolha sua modalidade</span>
+            <span class="item-arrow">→</span>
+          </div>
+          <div class="list-item">
+            <span class="item-number">02</span>
+            <span>Agende o melhor horário</span>
+            <span class="item-arrow">→</span>
+          </div>
+          <div class="list-item">
+            <span class="item-number">03</span>
+            <span>Treine com orientação completa</span>
+            <span class="item-arrow">→</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="modalidades-footer">
+      <div class="footer-brand">
+        <span class="footer-mark"></span>
+        <span>ARENA 12</span>
+      </div>
+
+      <div class="footer-address">
+        Rua das Palmieiras, 312 — Vila Marianas, São Paulo •
+        <span>(11) 3042-1212</span>
+      </div>
+
+      <div class="footer-links">
+        <div>
+          <h4>ACADEMIA</h4>
+          <a href="#">A academia</a>
+          <a href="#">Estrutura</a>
+          <a href="#">Professores</a>
+        </div>
+        <div>
+          <h4>TREINE</h4>
+          <a href="#">Jiu-Jitsu</a>
+          <a href="#">Boxe</a>
+          <a href="#">Muay Thai</a>
+        </div>
+        <div>
+          <h4>CONTATO</h4>
+          <a href="#">WhatsApp</a>
+          <a href="#">Instagram</a>
+          <a href="#">Como chegar</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <main class="auth-screen" id="authScreen" aria-hidden="true">
+    <section class="auth-card" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="auth-close" id="authClose" type="button" aria-label="Fechar autenticação">&times;</button>
+
+      <div class="auth-avatar" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="31" fill="rgba(255,255,255,.16)"/>
+          <path d="M32 14c-8 0-13 6-13 14 0 5 2 8 4 11-1 5-5 7-11 9 6 7 13 10 20 10s14-3 20-10c-6-2-10-4-11-9 2-3 4-6 4-11 0-8-5-14-13-14Z" fill="#eee8f2"/>
+        </svg>
+      </div>
+
+      <div class="auth-heading">
+        <p class="auth-kicker">System GFG</p>
+        <h1 id="authTitle">Bem-vindo de volta</h1>
+        <p id="authSubtitle">Acesse sua conta para continuar</p>
+      </div>
+
+      <div class="auth-tabs" role="tablist" aria-label="Tipo de acesso">
+        <button class="auth-tab is-active" id="loginTab" type="button" role="tab" aria-selected="true">Entrar</button>
+        <button class="auth-tab" id="registerTab" type="button" role="tab" aria-selected="false">Criar conta</button>
+      </div>
+
+      <div class="auth-form">
+        <label class="auth-field">
+          <span>E-mail</span>
+          <span class="field-control">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6"/></svg>
+            <input type="email" placeholder="seuemail@exemplo.com" aria-label="E-mail">
+          </span>
+        </label>
+
+        <label class="auth-field name-field" id="nameField" hidden>
+          <span>Nome completo</span>
+          <span class="field-control">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3"/><path d="M5 20c.8-4 3-6 7-6s6.2 2 7 6"/></svg>
+            <input type="text" placeholder="Seu nome" aria-label="Nome completo">
+          </span>
+        </label>
+
+        <label class="auth-field">
+          <span>Senha</span>
+          <span class="field-control">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            <input id="authPassword" type="password" placeholder="Digite sua senha" aria-label="Senha">
+            <button class="password-toggle" id="passwordToggle" type="button">Mostrar</button>
+          </span>
+        </label>
+
+        <div class="auth-options" id="loginOptions">
+          <label class="remember"><input type="checkbox"> <span>Lembrar de mim</span></label>
+          <button type="button" class="forgot-password">Esqueci minha senha</button>
+        </div>
+
+        <button class="auth-submit" type="button">ENTRAR</button>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      const isOpen = menuBtn.classList.toggle("open");
+      mobileMenu.classList.toggle("open", isOpen);
+      menuBtn.setAttribute("aria-expanded", isOpen);
+      menuBtn.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+    });
+
+    document.querySelectorAll(".mobile-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        menuBtn.classList.remove("open");
+        mobileMenu.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute("aria-label", "Abrir menu");
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        menuBtn.classList.remove("open");
+        mobileMenu.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.setAttribute("aria-label", "Abrir menu");
+      }
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

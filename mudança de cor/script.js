@@ -1,56 +1,95 @@
 (() => {
 
-// Configura a abertura da tela de autenticação e a troca entre seus modos visuais.
+const SITE_PASSWORD = "2003";
+const ACCESS_KEY = "gfg-site-access-admin";
+
+const hasSiteAccess = () => localStorage.getItem(ACCESS_KEY) === "granted";
+
 const setupAuthentication = () => {
     const authScreen = document.getElementById("authScreen");
     const authClose = document.getElementById("authClose");
-    const loginTab = document.getElementById("loginTab");
-    const registerTab = document.getElementById("registerTab");
-    const nameField = document.getElementById("nameField");
-    const loginOptions = document.getElementById("loginOptions");
     const authTitle = document.getElementById("authTitle");
     const authSubtitle = document.getElementById("authSubtitle");
     const authSubmit = document.querySelector(".auth-submit");
     const passwordToggle = document.getElementById("passwordToggle");
     const password = document.getElementById("authPassword");
 
-    // Atualiza textos e campos conforme o usuário escolhe login ou cadastro.
-    const setMode = (mode) => {
-        const isRegister = mode === "register";
-        loginTab.classList.toggle("is-active", !isRegister);
-        registerTab.classList.toggle("is-active", isRegister);
-        loginTab.setAttribute("aria-selected", String(!isRegister));
-        registerTab.setAttribute("aria-selected", String(isRegister));
-        nameField.hidden = !isRegister;
-        loginOptions.hidden = isRegister;
-        authTitle.textContent = isRegister ? "Crie sua conta" : "Bem-vindo de volta";
-        authSubtitle.textContent = isRegister ? "Comece a organizar seus treinos" : "Acesse sua conta para continuar";
-        authSubmit.textContent = isRegister ? "CRIAR CONTA" : "ENTRAR";
+    if (!authScreen || !authTitle || !authSubtitle || !authSubmit || !password || !passwordToggle) {
+        return;
+    }
+
+    const openAuth = () => {
+        authTitle.textContent = "Acesso administrativo";
+        authSubtitle.textContent = "Digite a senha para continuar";
+        authScreen.classList.add("is-visible");
+        authScreen.setAttribute("aria-hidden", "false");
+        password.value = "";
+        password.focus();
     };
 
-    // Fecha a tela de autenticação sem enviar ou armazenar dados.
     const closeAuth = () => {
         authScreen.classList.remove("is-visible");
         authScreen.setAttribute("aria-hidden", "true");
     };
 
-    // Abre a tela quando qualquer botão "Comece agora" é acionado.
+    const validateAccess = () => {
+        if (password.value.trim() === SITE_PASSWORD) {
+            localStorage.setItem(ACCESS_KEY, "granted");
+            closeAuth();
+            return;
+        }
+
+        authSubtitle.textContent = "Senha incorreta. Tente novamente.";
+        password.value = "";
+        password.focus();
+    };
+
+    if (!hasSiteAccess()) {
+        openAuth();
+        if (authClose) authClose.hidden = true;
+    } else {
+        if (authClose) authClose.hidden = false;
+        closeAuth();
+    }
+
     document.querySelectorAll(".auth-trigger").forEach((trigger) => trigger.addEventListener("click", (event) => {
         event.preventDefault();
-        setMode("login");
+        if (!hasSiteAccess()) {
+            openAuth();
+            return;
+        }
+
+        authTitle.textContent = "Acesso administrativo";
+        authSubtitle.textContent = "Senha correta. Você entrou.";
         authScreen.classList.add("is-visible");
         authScreen.setAttribute("aria-hidden", "false");
     }));
-    loginTab.addEventListener("click", () => setMode("login"));
-    registerTab.addEventListener("click", () => setMode("register"));
-    authClose.addEventListener("click", closeAuth);
+
+    if (authClose) {
+        authClose.addEventListener("click", () => {
+            if (hasSiteAccess()) {
+                closeAuth();
+            }
+        });
+    }
+
     passwordToggle.addEventListener("click", () => {
         const isVisible = password.type === "text";
         password.type = isVisible ? "password" : "text";
         passwordToggle.textContent = isVisible ? "Mostrar" : "Ocultar";
     });
+
+    authSubmit.addEventListener("click", validateAccess);
+    password.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            validateAccess();
+        }
+    });
+
     document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && authScreen.classList.contains("is-visible")) closeAuth();
+        if (event.key === "Escape" && hasSiteAccess() && authScreen.classList.contains("is-visible")) {
+            closeAuth();
+        }
     });
 };
 
